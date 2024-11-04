@@ -1,0 +1,19 @@
+name: Template Workflow
+ 
+on:
+  workflow_call:
+    inputs:
+      example_input:
+        description: 'An example input'
+        required: true
+        default: 'default value'
+ 
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+ 
+      - name: Display input
+        run: echo "The input value is: ${{ inputs.example_input }}"
